@@ -1,0 +1,17 @@
+{
+  "name": "public-api-design",
+  "version": "0.0.1",
+  "description": "Persons and Companies public API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Kliment <adam@netmilk.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "api-landscape": "^0.0.1"
+  },
+  "api-landscape":{
+    "design": true
+  }
+}

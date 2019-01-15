@@ -1,0 +1,85 @@
+swagger: "2.0"
+
+info:
+  version: 0.0.1
+  title: Public Persons and Companies API
+  description: A simple API to demonstrate API Landscape lifecycle
+
+schemes:
+  - http
+
+basePath: /
+paths:
+  /persons:
+    get:
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      summary: Gets persons
+      description: Returns a list containing all persons.
+      responses:
+        200:
+          description: A list of Person
+          schema:
+            $ref: "#/definitions/Persons"
+          headers:
+            X-RateLimit-Limit:
+              description: The number of allowed requests in the current period
+              type: integer
+              default: 500
+
+  /companies:
+    get:
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json" 
+      summary: Gets companies
+      description: Returns a list containing all persons.
+      responses:
+        200:
+          description: A list of Companies
+          schema:
+            $ref: "#/definitions/Companies"
+          headers:
+            X-RateLimit-Limit:
+              description: The number of allowed requests in the current period
+              type: integer
+              default: 500
+
+definitions:
+  Persons:
+    type: array
+    items:
+      type: object
+      required:
+        - username
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        username:
+          type: string
+        age:
+          type: number
+
+  Companies:
+    type: array
+    items:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        street:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+
+
+
